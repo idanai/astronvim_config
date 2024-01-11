@@ -7,7 +7,17 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "lua_ls",
+        "lua_ls", -- lua
+        "clangd", -- C, C++
+        "omnisharp_mono", -- C#
+        "cmake", -- CMake
+        "marksman", -- Markdown
+        -- Note:
+        -- I found while trying to install 'pylsp' and 'cmake' that is may fail if:
+        -- 1. 'pip' is not installed
+        -- 2. if you fail to create python virtual environments (venv)
+        "pylsp", -- Python
+        "rust_analyzer" -- Rust
       })
     end,
   },
